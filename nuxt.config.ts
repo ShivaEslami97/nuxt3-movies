@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  css: ["~/assets/css/main.css"],
   modules: ["@pinia/nuxt"],
   components: [
     {
@@ -10,5 +11,11 @@ export default defineNuxtConfig({
   ],
   imports: {
     dirs: ["types/*.ts", "store/*.ts", "types/**/*.ts"],
+  },
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
   },
 });
